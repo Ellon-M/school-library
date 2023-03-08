@@ -6,25 +6,8 @@ class Person
     @age = age
   end
 
-  def read_id
-    @id
-  end
-
-  def read_name
-    @name
-  end
-
-  def read_age
-    @age
-  end
-
-  def access_name(name)
-    @name = name
-  end
-
-  def access_age(age)
-    @age = age
-  end
+  attr_reader :id
+  attr_accessor :name, :age
 
   def of_age
     return true if @age >= 18

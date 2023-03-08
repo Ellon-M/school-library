@@ -25,6 +25,6 @@ end
 class TrimmerDecorator < Decorator
   def correct_name
     @correct = @nameable.correct_name
-    @correct.length > 10 ? "#{@correct[0...10]}" : @correct
+    @correct.length > 10 ? (@correct[0...10]).to_s : @correct
   end
 end

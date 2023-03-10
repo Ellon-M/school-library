@@ -15,17 +15,19 @@ class App
 
   def list_books
     if @books.empty?
-        puts "There are no books available yet\n\n"
+      puts "There are no books available yet\n\n"
     else
-        @books.each { |book| puts "Title: #{book.title}, Author: #{book.author}" }
+      @books.each { |book| puts "Title: #{book.title}, Author: #{book.author}" }
     end
   end
 
   def list_people
     if @people.empty?
-        puts "There are no people yet.\n\n"
+      puts "There are no people yet.\n\n"
     else
-      @people.each { |person| puts "Name: #{person.name} Age: #{person.age} Class:#{person.classroom} ID: #{person.id}" }
+      @people.each do |person|
+        puts "Name: #{person.name} Age: #{person.age} Class:#{person.classroom} ID: #{person.id}"
+      end
     end
   end
 

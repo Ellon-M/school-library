@@ -17,9 +17,9 @@ class Main
     }
 
     @list.each do |index, string|
-        puts "#{index} - #{string}"
+      puts "#{index} - #{string}"
     end
-      gets.chomp
+    gets.chomp
   end
 
   app = App.new

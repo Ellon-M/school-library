@@ -1,7 +1,12 @@
 require_relative './app/app'
 
 class Main
-  puts "School library app!\n\n"
+  def start_console
+    puts "School library app!\n\n"
+    loop do
+      list_of_options
+      input = gets.chomp
+    end
 
   def self.menu
     puts "Please choose an option by entering a number from the list:\n"

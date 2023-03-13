@@ -6,6 +6,11 @@ class Main
     loop do
       list_of_options
       input = gets.chomp
+      if input == '7'
+        puts 'Thanks for using the app!'
+        break
+      end
+      option(input)
     end
 
   def self.menu

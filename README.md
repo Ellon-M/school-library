@@ -81,7 +81,7 @@ To view the project, run the file `main.rb`.
 - Twitter: [@twitterhandle](https://twitter.com/ellonm4)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/ellon-m)
 
-👤 **Ellon M**
+👤 **Jitender Kumar**
 
 - GitHub: [@ohyajk](https://github.com/ohyajk)
 - LinkedIn: [@ohyajk](https://linkedin.com/in/ohyajk)

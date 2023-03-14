@@ -13,10 +13,10 @@ def read_person
       people = JSON.parse(file.read)
       people.each do |person|
         @people << if person['occupation'] == 'Student'
-                      Student.new(person['name'], person['age'], person['classroom'], person['parent_permission'])
-                    else
-                      Teacher.new(person['age'], person['specialization'], person['name'], person['parent_permission'])
-                    end
+                     Student.new(person['name'], person['age'], person['classroom'], person['parent_permission'])
+                   else
+                     Teacher.new(person['age'], person['specialization'], person['name'], person['parent_permission'])
+                   end
       end
     end
   else

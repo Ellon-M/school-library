@@ -70,3 +70,58 @@ def save_books
     file.puts(JSON.pretty_generate(book_store))
   end
 end
+
+def read_rentals
+  if File.exist?('../data/rentals.json')
+    File.open('../data/rentals.json', 'r') do |file|
+      rentals = JSON.parse(file.read)
+      rentals.each do |rental|
+        @rentals << Rental.new(rental['date'], @persons[rental['person_index']], @books[rental['book_index']])
+      end
+    end
+  else
+    []
+  end
+end
+def save_rentals
+  rentals = @rentals.map do |rental|
+    {
+      date: rental.date,
+      person_index: @persons.index(rental.person),
+      book_index: @books.index(rental.book)
+    }
+  end
+  File.new('../data/rentals.json', 'w') unless File.exist?('../data/rentals.json')
+  File.open('../data/rentals.json', 'w') do |file|
+    file.puts(JSON.pretty_generate(rentals))
+  end
+end
+white_check_mark
+eyes
+raised_hands
+
+def read_rentals
+  if File.exist?('../data/rentals.json')
+    File.open('../data/rentals.json', 'r') do |file|
+      rentals = JSON.parse(file.read)
+      rentals.each do |rental|
+        @rentals << Rental.new(rental['date'], @persons[rental['person_index']], @books[rental['book_index']])
+      end
+    end
+  else
+    []
+  end
+end
+def save_rentals
+  rentals = @rentals.map do |rental|
+    {
+      date: rental.date,
+      person_index: @persons.index(rental.person),
+      book_index: @books.index(rental.book)
+    }
+  end
+  File.new('../data/rentals.json', 'w') unless File.exist?('../data/rentals.json')
+  File.open('../data/rentals.json', 'w') do |file|
+    file.puts(JSON.pretty_generate(rentals))
+  end
+end

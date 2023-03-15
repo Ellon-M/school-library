@@ -75,7 +75,7 @@ def read_rentals
     File.open('data/rentals.json', 'r') do |file|
       rentals = JSON.parse(file.read)
       rentals.each do |rental|
-        @rentals << Rental.new(rental['date'], @people[rental['person_id']], @books[rental['book_id']])
+        @rentals << Rental.new(rental['date'], @books[rental['book_id']], @people[rental['person_id']])
       end
     end
   else
@@ -87,8 +87,9 @@ def save_rentals
   rentals = @rentals.map do |rental|
     {
       date: rental.date,
-      person_id: rental.person.id,
-      book: rental.book.title
+      person: rental.person.id,
+      book_id: @books.index(rental.book),
+      person_id: @people.index(rental.person)
     }
   end
   open_file('data/rentals.json', rentals)

@@ -87,8 +87,8 @@ def save_rentals
   rentals = @rentals.map do |rental|
     {
       date: rental.date,
-      person_id: @people.index(rental.person),
-      book_id: @books.index(rental.book)
+      person_id: rental.person.id,
+      book: rental.book.title
     }
   end
   open_file('data/rentals.json', rentals)

@@ -5,12 +5,16 @@ require_relative 'teacher'
 require_relative 'rental'
 require_relative 'classroom'
 require_relative 'nameable'
+require_relative 'preserve_data'
 
 class App
   def initialize
     @books = []
     @people = []
     @rentals = []
+    read_person
+    read_books
+    read_rentals
   end
 
   def list_books
@@ -26,7 +30,7 @@ class App
       puts "There are no people yet.\n\n"
     else
       @people.each do |person|
-        puts "Name: #{person.name} Age: #{person.age} Class:#{person.classroom} ID: #{person.id}"
+        puts "Name: #{person.name} Age: #{person.age} ID: #{person.id}"
       end
     end
   end
@@ -56,8 +60,9 @@ class App
     puts 'Has Parent permission? [Y/N] '
     parent_permission = gets.chomp
 
-    student = Student.new(classroom, age, name, parent_permission)
+    student = Student.new(name, age, classroom, parent_permission)
     @people.push(student)
+    save_person
     puts 'Student Created Successfully'
   end
 
@@ -76,6 +81,7 @@ class App
 
     teacher = Teacher.new(age, specialization, name, parent_permission)
     @people.push(teacher)
+    save_person
     puts 'Teacher Created Successfully'
   end
 
@@ -88,6 +94,7 @@ class App
 
     book = Book.new(title, author)
     @books.push(book)
+    save_books
     puts 'Book Added Successfully'
   end
 
@@ -111,6 +118,7 @@ class App
       date = gets.chomp
       rental_detail = Rental.new(date, @books[rental_book], @people[rental_person])
       @rentals.push(rental_detail)
+      save_rentals
       puts 'Rental Added Successfully'
     end
   end

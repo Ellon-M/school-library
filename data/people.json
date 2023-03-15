@@ -1,0 +1,23 @@
+[
+  {
+    "occupation": "Student",
+    "name": "Maggie",
+    "age": "13",
+    "classroom": "3E",
+    "parent_permission": null
+  },
+  {
+    "occupation": "Teacher",
+    "name": "Cathy",
+    "age": "33",
+    "specialization": "Math",
+    "parent_permission": null
+  },
+  {
+    "occupation": "Student",
+    "name": "Krissy",
+    "age": "11",
+    "classroom": "2S",
+    "parent_permission": null
+  }
+]

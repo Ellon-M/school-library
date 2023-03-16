@@ -17,16 +17,16 @@ class Person < Nameable
     @name
   end
 
-  def of_age
+  def of_age?
     return true if @age >= 18
 
     false
   end
 
-  private :of_age
+  private :of_age?
 
-  def can_use_services
-    return true if is_of_age || @parent_permission
+  def can_use_services?
+    return true if of_age? || @parent_permission
 
     false
   end

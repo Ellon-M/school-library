@@ -3,21 +3,21 @@ require_relative '../app/rental'
 
 describe Person do
   before :each do
-      @person_1 = Person.new(12, 'Jane', true)
-      @person_2 = Person.new(17, 'Claudia', false)
-      @person_3 = Person.new(19, 'Miriam', false)
+    @person_a = Person.new(12, 'Jane', true)
+    @person_b = Person.new(17, 'Claudia', false)
+    @person_c = Person.new(19, 'Miriam', false)
   end
 
-  describe "#age" do
-    it "returns the correct age" do
+  describe '#age' do
+    it 'returns the correct age' do
       expect(@person_1.age).to eql 12
       expect(@person_2.age).to eql 17
     end
   end
-  describe "#name" do
-    it "returns the correct author" do
-      expect(@person_1.name).to eql "Jane"
-      expect(@person_2.name).to eql "Claudia"
+  describe '#name' do
+    it 'returns the correct author' do
+      expect(@person_1.name).to eql 'Jane'
+      expect(@person_2.name).to eql 'Claudia'
     end
   end
 
